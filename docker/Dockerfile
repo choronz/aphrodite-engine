@@ -27,7 +27,7 @@ ENV CUDA_HOME=/usr/local/cuda
 
 ENV HF_HOME=/tmp
 ENV NUMBA_CACHE_DIR=$HF_HOME/numba_cache
-ENV TORCH_CUDA_ARCH_LIST="6.1 7.0 7.5 8.0 8.6 8.9 9.0+PTX"
+ENV TORCH_CUDA_ARCH_LIST="8.9"
 RUN python3 -m pip install --no-cache-dir -e .
 
 # Entrypoint exec form doesn't do variable substitution automatically ($HOME)
