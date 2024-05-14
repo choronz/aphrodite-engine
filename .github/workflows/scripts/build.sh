@@ -11,7 +11,7 @@ LD_LIBRARY_PATH=${cuda_home}/lib64:$LD_LIBRARY_PATH
 # TODO: Can we do 2 jobs?
 export MAX_JOBS=1
 
-export TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0 7.5 8.0 8.6 8.9 9.0+PTX"
+export TORCH_CUDA_ARCH_LIST="8.9"
 # Install requirements
 $python_executable -m pip install wheel packaging
 $python_executable -m pip install -r requirements-cuda.txt
