@@ -14,7 +14,7 @@ $python_executable -m pip install -r requirements-cuda.txt
 # Limit the number of parallel jobs to avoid OOM
 export MAX_JOBS=2
 
-export TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0 7.5 8.0 8.6 8.9 9.0+PTX"
+export TORCH_CUDA_ARCH_LIST="8.9"
 
 # Build
-$python_executable setup.py bdist_wheel --dist-dir=dist --py-limited-api=cp38
+$python_executable setup.py bdist_wheel --dist-dir=dist --py-limited-api=cp310
