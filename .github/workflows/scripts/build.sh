@@ -1,7 +1,7 @@
 #!/bin/bash
 
 python_executable=python$1
-python_ver=echo $1 | tr '.' '\0'
+# python_ver=echo $1 | tr '.' '\0'
 cuda_home=/usr/local/cuda-$2
 
 # Update paths
@@ -18,4 +18,4 @@ export MAX_JOBS=2
 export TORCH_CUDA_ARCH_LIST="8.9"
 
 # Build
-$python_executable setup.py bdist_wheel --dist-dir=dist --py-limited-api=cp${python_ver}
+$python_executable setup.py bdist_wheel --dist-dir=dist --py-limited-api=cp312
