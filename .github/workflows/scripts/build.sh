@@ -17,4 +17,4 @@ export MAX_JOBS=2
 export TORCH_CUDA_ARCH_LIST="8.9"
 
 # Build
-$python_executable setup.py bdist_wheel --dist-dir=dist --py-limited-api=cp310
+$python_executable setup.py bdist_wheel --dist-dir=dist --py-limited-api=cp$1
