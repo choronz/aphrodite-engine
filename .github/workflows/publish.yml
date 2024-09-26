@@ -64,13 +64,12 @@ jobs:
           key: ${{ github.job }}-${{ matrix.python-version }}-${{ matrix.cuda-version }}
 
       - name: Delete
-        uses: actions/github-script@v7
+        uses: dev-drprasad/delete-tag-and-release@v1.1
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const { owner, repo } = context.repo
-            const { data: { id } } = await github.repos.getLatestRelease({ owner, repo })
-            await github.repos.deleteRelease({ owner, repo, release_id: id })
+          tag_name: main
+          delete_release: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          #repo: <owner>/<repoName> #(optional) default: repo running this action - the target repository.
 
       - name: Set up Linux Env
         if: ${{ runner.os == 'Linux' }}
