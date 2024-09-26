@@ -49,7 +49,7 @@ jobs:
       fail-fast: false
       matrix:
           os: ['ubuntu-22.04']
-          python-version: ['3.12']
+          python-version: ['3.11', '3.12']
           pytorch-version: ['2.4.0']  # Must be the most recent version that meets requirements-cuda.txt.
           cuda-version: ['12.4']
 
@@ -104,8 +104,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.asset_name }}
-          path: ./dist/${{ env.wheel_name }}
+          path: ./dist
           retention-days: 90
           overwrite: true
-          asset_name: ${{ env.asset_name }}
-          asset_content_type: application/*
