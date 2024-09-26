@@ -22,7 +22,7 @@ jobs:
       upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Extract branch info
         shell: bash
@@ -31,7 +31,7 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: "actions/github-script@v6"
+        uses: "actions/github-script@v7"
         env:
           RELEASE_TAG: ${{ env.release_tag }}
         with:
