@@ -33,7 +33,7 @@ jobs:
           tag_name: main
           delete_release: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          #repo: <owner>/<repoName>
+          repo: choronz/aphrodite-engine
 
       - name: Create Release
         id: create_release
